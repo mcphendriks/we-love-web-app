@@ -1,0 +1,115 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.3rem 10%;
+    font-size: 1.2rem;
+    z-index: 100;
+    border-bottom: 2px solid #000;
+    background-color:var(--background-color-rgb)
+  }
+  
+  .header::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .headerInput[type="checkbox"] {
+   display: none;
+  }
+  
+  .headerLabel {
+    display: none;
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    right: 5%;
+    cursor: pointer;
+  }
+  
+  .headerLogo {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-size: 5rem;
+  color: blue;
+  font-weight: 900;
+  text-decoration: none;
+  }
+  
+  .headerNav {
+    display:flex;
+    gap: 1rem;
+    font-weight: 500;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    padding-left: 1rem;
+    background-color:var(--background-color-rgb)
+  }
+
+  .headerNavLink  {
+    font-family: 'Montserrat', sans-serif;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+  .headerNavLink:hover {
+  text-decoration: underline;
+  }
+  
+  @media (max-width: 45em) {
+    .header {
+      padding: 1.3 5%;
+    }
+  
+    .headerLabel {
+      display: inline-flex;
+    }
+  
+    .headerInput[type="checkbox"]:checked~label .headerMenuIcon {
+      display: none;
+    }
+  
+    .headerInput[type="checkbox"]:checked~label .headerMenuClose {
+      display: block;
+    }
+  
+     .headerMenuClose {
+      display: none;
+    }
+  
+    .headerNav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: .3s ease;
+      border-top: 1.5px solid #000;
+      border-bottom: 1.5px solid #000;
+    }
+    
+    .headerInput[type="checkbox"]:checked~nav  {
+      height: auto;
+    }
+  
+   .headerNavLink  {
+      display: block;
+      font-size: 1.3rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  } 
